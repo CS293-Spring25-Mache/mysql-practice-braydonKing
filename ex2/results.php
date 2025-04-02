@@ -28,6 +28,8 @@ neighborhood id. Call this function, and display the neighborhood name in the
 
 include("src/functions.php");
 
+$hoodId=$_GET["neighborhoodId"];
+
 ?>
 
 <!doctype html>
@@ -69,7 +71,8 @@ include("src/functions.php");
     <div class="container mt-5">
 
     
-    
+        <?php echo $hoodId?>
+
         <h1>You picked <!-- enter neighborhood name here --></h1>
 
 

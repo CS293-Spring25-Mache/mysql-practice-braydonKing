@@ -24,6 +24,10 @@ then loop through the results with foreach.
 
 include("src/functions.php");
 
+$db = dbConnect();
+
+$neighborhoods = getNeighborhoods($db);
+
 ?>
 
 <!doctype html>
@@ -42,11 +46,24 @@ include("src/functions.php");
     <div class="container">
 
       <!-- display bulleted list here -->
-  
+      <!-- <pre>
+      <?php 
+      #var_dump($neighborhoods)
 
+      
+      ?>
+      </pre> -->
+      <ul>
 
-
-
+      <?php 
+      foreach($neighborhoods as $hood) {
+          $id = $hood["id"];
+          $neighborhood= $hood["neighborhood"];
+          echo "<li>$neighborhood, $id</li>";
+      }
+      ?>
+      
+      </ul>
 
 
 

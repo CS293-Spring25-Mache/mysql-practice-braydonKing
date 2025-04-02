@@ -28,6 +28,13 @@ neighborhood id. Call this function, and display the neighborhood name in the
 
 include("src/functions.php");
 
+$db = dbConnect();
+$neighborhoods = getNeighborhoods($db);
+
+
+
+
+
 ?>
 
 <!doctype html>
@@ -74,6 +81,14 @@ include("src/functions.php");
             <div class="row">
                 <div class="col-sm-8">
                     <select name="neighborhoodId">
+                    <?php 
+                        foreach($neighborhoods as $hood) {
+                            $id = $hood["id"];
+                            $neighborhood= $hood["neighborhood"];
+                            echo "<option value = '$id'> $neighborhood</option>";
+                            
+                        }
+                    ?>
 
 
 
