@@ -15,7 +15,7 @@ $(document).ready(function(){
       })
         .done(function( data ) {
       
-          json=JSON.parse(data);
+          json= JSON.parse(data);
           console.log(json);
 
           var name=json[0].name;

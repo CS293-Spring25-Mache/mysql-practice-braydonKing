@@ -40,7 +40,6 @@ function getNeighborhood($db, $hoodId) {
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rows;
-    
     }
     catch (Exception $e) {
         echo $e;
