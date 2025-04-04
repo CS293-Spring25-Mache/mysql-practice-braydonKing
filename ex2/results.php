@@ -28,7 +28,9 @@ neighborhood id. Call this function, and display the neighborhood name in the
 
 include("src/functions.php");
 
+$db = dbConnect();
 $hoodId=$_GET["neighborhoodId"];
+$neighborhood = getNeighborhood($db,$hoodId);
 
 ?>
 
@@ -51,7 +53,7 @@ $hoodId=$_GET["neighborhoodId"];
                 <a class="navbar-brand" href="index.php">Fake Airbnb</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!--
+<!--                     
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
@@ -64,21 +66,15 @@ $hoodId=$_GET["neighborhoodId"];
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                    </ul>\-->
+                    </ul>\ -->
                 </div>
             </div>
         </nav>
     <div class="container mt-5">
-
     
-        <?php echo $hoodId?>
+        <?php echo $hoodId; ?>
 
-        <h1>You picked <!-- enter neighborhood name here --></h1>
-
-
-
-
-
+        <h1>You picked <?php echo $neighborhood[0]['neighborhood'];?></h1>
 
 
     </div>

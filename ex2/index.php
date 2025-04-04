@@ -31,10 +31,6 @@ include("src/functions.php");
 $db = dbConnect();
 $neighborhoods = getNeighborhoods($db);
 
-
-
-
-
 ?>
 
 <!doctype html>
@@ -74,10 +70,8 @@ $neighborhoods = getNeighborhoods($db);
             </div>
         </nav>
     <div class="container mt-5">
-
         <h1>Select neighborhood:</h1>
         <form action="results.php" method="GET" >
-
             <div class="row">
                 <div class="col-sm-8">
                     <select name="neighborhoodId">
@@ -86,12 +80,8 @@ $neighborhoods = getNeighborhoods($db);
                             $id = $hood["id"];
                             $neighborhood= $hood["neighborhood"];
                             echo "<option value = '$id'> $neighborhood</option>";
-                            
                         }
                     ?>
-
-
-
                     </select>
 
                 </div>

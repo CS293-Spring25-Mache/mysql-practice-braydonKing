@@ -31,7 +31,21 @@ function getNeighborhoods($db){
     catch (Exception $e) {
         echo $e;
     }
+}
+
+function getNeighborhood($db, $hoodId) {
+    try {
+        $stmt = $db->prepare("select * FROM neighborhoods 
+                              WHERE id=$hoodId");   
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $rows;
     
+    }
+    catch (Exception $e) {
+        echo $e;
+    }
+
 }
 
 
