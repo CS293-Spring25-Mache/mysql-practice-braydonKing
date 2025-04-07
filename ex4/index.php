@@ -15,7 +15,6 @@ e.g.
 <p id='47' class='hoods'>Alameda</p>
 ...
 
-
 3. Write javascript in js/script.js that:
 -creates a 'click' event listener on .hoods
 -when clicked, get the id attribute
@@ -78,16 +77,12 @@ $hoods= getFiveHoods($db);
             <div class="col-6">
 
             <?php
-
             //var_dump($hoods);
-
             foreach($hoods as $n){
               $id=$n["id"];
               $hood=$n["neighborhood"];
 
               echo "<p id='$id' class='hood'>$hood</p>";
-
-
 
             }
 

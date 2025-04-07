@@ -1,4 +1,4 @@
-
+console.log("Hello from script.js");
 
 $(document).ready(function(){
 
@@ -14,6 +14,7 @@ $(document).ready(function(){
         data: { neighborhoodId: id }
       })
         .done(function( data ) {
+          console.log("Data Loaded: " + data);
       
           json= JSON.parse(data);
           console.log(json);

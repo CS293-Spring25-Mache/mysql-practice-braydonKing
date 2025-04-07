@@ -9,9 +9,4 @@ $listing=getListingByNid($db, $id);
 
 echo json_encode($listing);
 
-
-
-
-
-
 ?>
